@@ -1,0 +1,41 @@
+Skin Disease Detection
+
+Description: This process will depict the end-to-end process of building a flask API that accepts skin image as an input and detects the skin disease followed by sending medical report to patient and doctor through WhatsApp message.
+
+Input:
+EDA and Model Training
+Whatsapp Configuration
+Creating Flask API
+EDA and Model Training
+The dataset used for the training model is Skin Cancer MNIST: HAM10000
+
+Exploratory Data Analysis
+Frequency of Classes
+Distribution of Skin disease over Gender
+Histogram of the age of patients
+Location of disease over Gender
+
+
+**Note: ** There are 7 categories of skin disease and they are highly imbalanced. To resolve this issue, random oversampling is applied before model training along with pixel standardization.
+
+Oversampling increases data size by 4 times. validation and test accuracy exceed 90% after balancing class frequency.
+
+Major Steps Involved:
+
+1. Whatsapp Configuration
+2. Creating Flask API
+
+Twilio library is used to send a medical report through Whatsapp. Token and account ID is stored in a separate file named credentials.py
+
+essentials.py contains two major functionalities which are used in developing API.
+
+stringTORGB is to convert base64 string to image. Skin image is sent as base64 string through API call which is converted to image through stringTORGB.
+
+get_model method contains architecture of trained model.
+
+API contains methods to encode the image to base64 string and also detect skin disease and send to Whatsapp message.
+
+
+Output:
+
+If the confidence of model output is not greater than 80% then it is declared as 'No disease' class. Individual Whatsapp message is sent to patient and doctor regarding disease class.

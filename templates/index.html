@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Disease Classification</title>
+</head>
+<body>
+    <h1>Skin Disease Detection</h1>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".jpg, .jpeg, .png" required>
+        <button type="submit">Upload and Predict</button>
+    </form>
+    {% if prediction %}
+        <p><strong>Prediction:</strong> {{ prediction }}</p>
+    {% endif %}
+    {% if error %}
+        <p style="color: red;"><strong>Error:</strong> {{ error }}</p>
+    {% endif %}
+</body>
+</html>
