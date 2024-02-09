@@ -1,1 +1,1 @@
-# Scifor_Project
+# Skin-disease-detection
